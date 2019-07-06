@@ -10,13 +10,24 @@ def make_a_guess(magic):
 if __name__ == "__main__":
     print("Welcome to the number guessing game!")
 
+    max_guess = 5
+    count = 0
+
     r = randint(1, 10)
+    hit = False
     
-    while True:
+    while count < max_guess:
         hit = make_a_guess(r)
 
+        count += 1
+
         if hit == True:
-            print("You got it! r = ", r)
             break
+
+    if hit:
+        print("You got it with ", count, " trials: magic number = ", r)
+    else:
+        print("You didn't get with ", count, " trials." )
+            
 
 
